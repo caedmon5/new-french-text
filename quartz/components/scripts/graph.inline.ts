@@ -194,16 +194,36 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   )
 
   // calculate color
-  const color = (d: NodeData) => {
-    const isCurrent = d.id === slug
-    if (isCurrent) {
-      return computedStyleMap["--secondary"]
-    } else if (visited.has(d.id) || d.id.startsWith("tags/")) {
-      return computedStyleMap["--tertiary"]
-    } else {
-      return computedStyleMap["--gray"]
-    }
+//  const color = (d: NodeData) => {
+  //  const isCurrent = d.id === slug
+    // if (isCurrent) {
+      // return computedStyleMap["--secondary"]
+    // } else if (visited.has(d.id) || d.id.startsWith("tags/")) {
+  //    return computedStyleMap["--tertiary"]
+ //   } else {
+  //    return computedStyleMap["--gray"]
+  //  }
+//  }
+
+
+
+const color = (d: NodeData) => {
+console.log(d.id)
+  const isCurrent = d.id === slug
+  if (isCurrent) {
+    return "var(--secondary)"
+  } else if (d.id.startsWith("resources/")) {
+    return "blue"
+  } else if (d.id.startsWith("paradigms/")) {
+    return "green"
+  } else if (d.id.startsWith("modules/")) {
+    return "red"
+  } else if (visited.has(d.id)) {
+    return "var(--tertiary)"
+  } else {
+    return "gray" // default for top-level notes (content/)
   }
+}
 
   function nodeRadius(d: NodeData) {
     const numLinks = graphData.links.filter(

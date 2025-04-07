@@ -149,7 +149,7 @@ Radical de la 3ᵉ personne du pluriel au [[Indicatif - présent|présent de l�
 
 → [[Paradigmes de conjugaison]]  
 → [[Subjonctif - Passé]]  
-→ [[Indicatif - Présent]]  
+→ [[Indicatif - présent]]  
 → [[Conditionnel - Présent]]  
 → [[Temps verbaux]]  
 → [[Valeurs des modes]]
